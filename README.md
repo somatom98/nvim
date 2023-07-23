@@ -1,0 +1,5 @@
+# NVIM
+
+```
+:PackerSync
+```

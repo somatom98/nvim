@@ -1,18 +1,16 @@
-local nvim_tree_events = require('nvim-tree.events')
-local bufferline_state = require('bufferline.state')
+vim.g.barbar_auto_setup = true -- disable auto-setup
 
-local function get_tree_size()
-  return require'nvim-tree.view'.View.width
-end
+require'barbar'.setup {
 
-nvim_tree_events.subscribe('TreeOpen', function()
-  bufferline_state.set_offset(get_tree_size())
-end)
-
-nvim_tree_events.subscribe('Resize', function()
-  bufferline_state.set_offset(get_tree_size())
-end)
-
-nvim_tree_events.subscribe('TreeClose', function()
-  bufferline_state.set_offset(0)
-end)
+  -- Set the filetypes which barbar will offset itself for
+  sidebar_filetypes = {
+    -- Use the default values: {event = 'BufWinLeave', text = nil}
+    NvimTree = true,
+    -- Or, specify the text used for the offset:
+    undotree = {text = 'undotree'},
+    -- Or, specify the event which the sidebar executes when leaving:
+    ['neo-tree'] = {event = 'BufWipeout'},
+    -- Or, specify both
+    Outline = {event = 'BufWinLeave', text = 'symbols-outline'},
+  },
+}

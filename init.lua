@@ -1,30 +1,16 @@
 vim.o.number = true
 
-require('packer-plugins')
+require('plugins')
+
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
 
 require("nvim-tree").setup()
 require("telescope").setup()
--- omnisharp lsp config
-local pid = vim.fn.getpid()
-local omnisharp_bin = "/usr/local/bin/omnisharp/OmniSharp"
-require'lspconfig'.omnisharp.setup{
-	cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) }
-}
--- autocomplete config
-local cmp = require 'cmp'
-cmp.setup {
-	mapping = {
-		['<Tab>'] = cmp.mapping.select_next_item(),
-		['<S-Tab>'] = cmp.mapping.select_prev_item(),
-		['<CR>'] = cmp.mapping.confirm({
-			behavior = cmp.ConfirmBehavior.Replace,
-			select = true,
-		})
-	},
-	sources = {
-		{ name = 'nvim_lsp' },
-	}
-}
 
 -- MAPPINGS ----------------------------------------------------------------------------------------
 local opts = { noremap = true, silent = true }
@@ -66,6 +52,7 @@ map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
 map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
 -- Close buffer
 map('n', '-', '<Cmd>BufferClose<CR>', opts)
+map('n', '_', '<Cmd>BufferRestore<CR>', opts)
 -- BufferPick
 map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
 
