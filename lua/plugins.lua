@@ -63,13 +63,35 @@ return require('packer').startup(function(use)
 	use {
 		"folke/which-key.nvim",
 		config = function()
-		vim.o.timeout = true
-		vim.o.timeoutlen = 300
-		require("which-key").setup {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		}
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup {
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			}
+		end
+	}
+
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup{
+				---LHS of toggle mappings in NORMAL mode
+				toggler = {
+					---Line-comment toggle keymap
+					line = 'gcc',
+				},
+				---LHS of extra mappings
+				extra = {
+					---Add comment on the line above
+					above = 'gcO',
+					---Add comment on the line below
+					below = 'gco',
+					---Add comment at the end of line
+					eol = 'gcA',
+				},
+			}
 		end
 	}
 end)
