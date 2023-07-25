@@ -61,3 +61,20 @@ map('n', 'ff', '<Cmd>Telescope find_files<CR>', opts)
 map('n', 'fg', '<Cmd>Telescope live_grep<CR>', opts) 
 map('n', 'fb', '<Cmd>Telescope buffers<CR>', opts) 
 map('n', 'fh', '<Cmd>Telescope help_tags<CR>', opts) 
+
+-- Term
+map('n', 'T', '<Cmd>ToggleTerm<CR>', opts)
+map('t', '<esc>', [[<C-\><C-n>]], opts)
+local Terminal  = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({ 
+	cmd = "lazygit", 
+	hidden = true,
+	direction = "float",
+	float_opts = {
+		border = "double",
+	}
+})
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+map("n", "git", "<cmd>lua _lazygit_toggle()<CR>", opts)
