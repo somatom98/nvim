@@ -5,6 +5,10 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
+-- Useful commands already mapped
+-- ctrl + o: move cursor to previous position
+-- ctrl + i: move cursor to next position
+
 -- Base
 map("i", "jk", "<ESC>", opts)
 
