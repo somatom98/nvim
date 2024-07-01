@@ -12,6 +12,11 @@ local term_opts = { silent = true }
 -- ctrl + d: scroll down
 -- space - /: livegrep
 
+-- LSP
+-- K: hover
+-- <leader>cr: rename
+-- <leader>cA: source action
+
 -- Base
 map("i", "jk", "<ESC>", opts)
 
