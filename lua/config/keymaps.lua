@@ -12,11 +12,6 @@ local term_opts = { silent = true }
 -- ctrl + d: scroll down
 -- space - /: livegrep
 
--- LSP
--- K: hover
--- <leader>cr: rename
--- <leader>cA: source action
-
 -- Base
 map("i", "jk", "<ESC>", opts)
 
@@ -35,7 +30,11 @@ map("n", "<C-S-h>", ":vertical resize -2<CR>", opts)
 map("n", "<C-S-l>", ":vertical resize +2<CR>", opts)
 
 -- Lsp
+-- K: hover
+-- <leader>cr: rename
+-- <leader>cA: source action
 map("n", "gb", "<C-o>", opts)
 
 -- Neo tree
 map("n", "<leader>e", ":Neotree reveal<CR>", opts)
+map("n", "<leader>E", ":Neotree close<CR>", opts)
