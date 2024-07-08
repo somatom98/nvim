@@ -36,3 +36,6 @@ map("n", "<C-S-l>", ":vertical resize +2<CR>", opts)
 
 -- Lsp
 map("n", "gb", "<C-o>", opts)
+
+-- Neo tree
+map("n", "<leader>e", ":Neotree reveal<CR>", opts)
