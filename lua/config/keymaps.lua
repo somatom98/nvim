@@ -5,13 +5,6 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
--- Useful commands already mapped
--- ctrl + o: move cursor to previous position
--- ctrl + i: move cursor to next position
--- ctrl + u: scroll up
--- ctrl + d: scroll down
--- space - /: livegrep
-
 -- Base
 map("i", "jk", "<ESC>", opts)
 
@@ -30,9 +23,6 @@ map("n", "<C-S-h>", ":vertical resize -2<CR>", opts)
 map("n", "<C-S-l>", ":vertical resize +2<CR>", opts)
 
 -- Lsp
--- K: hover
--- <leader>cr: rename
--- <leader>cA: source action
 map("n", "gb", "<C-o>", opts)
 
 -- Neo tree
