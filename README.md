@@ -23,3 +23,13 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 2) Replace it with `cgn`
 3) Go to next result with `n` or `N`
 4) replace it with `.`
+
+### Comment
+
+#### Add comment below
+
+`gco`
+
+#### Add comment above
+
+`gc0`
