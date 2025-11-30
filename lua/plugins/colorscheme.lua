@@ -2,6 +2,12 @@ return {
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
 
+  -- add tokyonight
+  {
+    "folke/tokyonight.nvim",
+    opts = {},
+  },
+
   -- add cobalt2
   {
     {
@@ -18,7 +24,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "cobalt2",
+      colorscheme = "tokyonight",
     },
   },
 }
